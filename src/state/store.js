@@ -47,23 +47,23 @@ const store = createStore(reducer, {
 
 export default store
 
-// const renderWorld = (state) => {
-//   const {map, player} = state
-//   for(let y=0; y<map.length; y++) {
-//     const row = []
-//     for(let x=0; x < map[y].length; x++) {
-//       if (x === player.x && y === player.y) {
-//         row.push(22)
-//       } else {
-//         row.push(map[y][x])
-//       }
-//     }
-//     console.log(row)
-//   }
-//   console.log('-------------------------------')
-// }
+const renderWorld = (state) => {
+  const {map, player} = state
+  for(let y=0; y<map.length; y++) {
+    const row = []
+    for(let x=0; x < map[y].length; x++) {
+      if (x === player.x && y === player.y) {
+        row.push(22)
+      } else {
+        row.push(map[y][x])
+      }
+    }
+    console.log(row)
+  }
+  console.log('-------------------------------')
+}
 
-// store.subscribe(() => renderWorld(store.getState()))
+store.subscribe(() => renderWorld(store.getState()))
 
 
 // store.dispatch({
