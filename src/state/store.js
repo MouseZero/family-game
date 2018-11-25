@@ -45,6 +45,8 @@ const store = createStore(reducer, {
   }
 })
 
+export default store
+
 // const renderWorld = (state) => {
 //   const {map, player} = state
 //   for(let y=0; y<map.length; y++) {

@@ -1,4 +1,7 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {PropTypes} from 'prop-types'
+import Map from './components/Map'
 
 class Game extends React.Component {
   componentDidMount() {
@@ -27,10 +30,23 @@ class Game extends React.Component {
   }
 
   render() {
+    const {map, player} = this.props
     return (
-      <div>Game</div>
+      <div>
+        <div>
+          <Map map={map} player={player}/>
+        </div>
+      </div>
     )
   }
 }
+Game.propTypes = {
+  map: PropTypes.array,
+  player: PropTypes.object
+}
 
-export default Game
+const mapStateToProps = (state) => ({
+  map: state.map,
+  player: state.player
+})
+export default connect(mapStateToProps)(Game)
