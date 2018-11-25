@@ -1,0 +1,19 @@
+{
+  "name": "family-game",
+  "version": "1.0.0",
+  "description": "Game made with my family",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Russell Murray, Ashley Murray, Kylan Murray, Taya Murray",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "install": "^0.12.2",
+    "npm": "^6.4.1"
+  }
+}
