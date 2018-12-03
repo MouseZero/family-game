@@ -1,7 +1,7 @@
 import React from 'react'
 import Block from './Block'
 
-function Map ({map, player}) {
+function Map ({map, blockSize}) {
   return (
     <div>
       {map.map((row, yIndex) => {
@@ -10,9 +10,9 @@ function Map ({map, player}) {
             <Block
               key={'block'+yIndex+'-'+xIndex+'-'+block}
               block={block}
-              player={player}
               yIndex={yIndex}
               xIndex={xIndex}
+              blockSize={blockSize}
             />
           )
         })

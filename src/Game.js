@@ -5,7 +5,19 @@ import Map from './components/Map'
 import Player from './components/Player'
 
 class Game extends React.Component {
+  constructor(prop) {
+    super(prop)
+    this.state = {
+      blockSize: 50
+    }
+  }
+
   componentDidMount() {
+    const blockWidth = Math.floor(window.innerWidth / this.props.map[0].length)
+    const blockHeight = Math.floor(window.innerHeight / this.props.map.length)
+    this.setState(state => ({
+      blockSize: Math.min(blockWidth, blockHeight)
+    }))
     addEventListener('keydown', this.keyListener(this.props.dispatch), true)
   }
 
@@ -34,11 +46,12 @@ class Game extends React.Component {
 
   render() {
     const {map, player} = this.props
+    const {blockSize} = this.state
     return (
       <div>
         <div>
-          <Map map={map}/>
-          <Player player={player}/>
+          <Map map={map} blockSize={blockSize}/>
+          <Player player={player} blockSize={blockSize}/>
         </div>
       </div>
     )

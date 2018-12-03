@@ -4,12 +4,14 @@ const style = {
   position: 'absolute'
 }
 
-function Player ({player}) {
-  const x = (150 + (player.x * 200)) + 'px'
-  const y = (50 + (player.y * 200)) + 'px'
+function Player ({player, blockSize}) {
+  const x = (player.x * blockSize) + 'px'
+  const y = (player.y * blockSize) + 'px'
   const styleAdditions = {
     left: x,
-    top: y
+    top: y,
+    width: blockSize,
+    height: blockSize
   }
   const allStyles = {...style, ...styleAdditions}
   return (
