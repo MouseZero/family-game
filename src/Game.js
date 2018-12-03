@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {PropTypes} from 'prop-types'
 import Map from './components/Map'
+import Player from './components/Player'
 
 class Game extends React.Component {
   componentDidMount() {
@@ -36,7 +37,8 @@ class Game extends React.Component {
     return (
       <div>
         <div>
-          <Map map={map} player={player}/>
+          <Map map={map}/>
+          <Player player={player}/>
         </div>
       </div>
     )

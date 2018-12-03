@@ -1,28 +1,23 @@
 import React from 'react'
+import Block from './Block'
 
 function Map ({map, player}) {
   return (
     <div>
-      {map.map((row, index) => {
-        const newRow = row.map((block, rowIndex) => {
-          if (player.x === rowIndex && player.y === index) {
-            return (
-              <div
-                key={'block'+index+'-'+rowIndex+'-'+block}
-                className="player"
-              >{'00'}</div>
-            )
-          } else {
-            return (
-              <div
-                key={'block'+index+'-'+rowIndex+'-'+block}
-                className="block"
-              >{block}</div>
-            )
-          }
+      {map.map((row, yIndex) => {
+        const newRow = row.map((block, xIndex) => {
+          return (
+            <Block
+              key={'block'+yIndex+'-'+xIndex+'-'+block}
+              block={block}
+              player={player}
+              yIndex={yIndex}
+              xIndex={xIndex}
+            />
+          )
         })
         return (
-          <div key={index} className="rowOfBlocks">
+          <div key={'row'+yIndex} className="rowOfBlocks">
             {newRow}
           </div>
         )
